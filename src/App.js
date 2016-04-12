@@ -3,6 +3,7 @@ import {render}from 'react-dom';
 import Video from './Video';
 import Back from './Back';
 import Next from './Next';
+import {yt} from '../keys'
 import $ from 'jquery';
 
 
@@ -28,7 +29,7 @@ class App extends React.Component {
     $.get(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&chart=mostPopular
       &videoCategoryId=1&publishedAfter=${now}&maxResults=50&relevanceLanguage=en&
-      videoSyndicated=true&q=webseries&type=video&key=AIzaSyA7KYcqClSnN0qQ_ita-LiQrhLRWWq5Vz8`,
+      videoSyndicated=true&q=webseries&type=video&key=${yt}`,
       function ( data ) {
         let len = data.items.length;
         for ( var i=0; i<len; i++ ) {
