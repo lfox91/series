@@ -3,7 +3,7 @@ import {render}from 'react-dom';
 import Video from './Video';
 import Back from './Back';
 import Next from './Next';
-import {yt} from '../keys'
+import {yt} from '../keys';
 import $ from 'jquery';
 
 
