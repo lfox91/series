@@ -1,14 +1,11 @@
 import React from 'react';
-
+import YouTube from 'react-youtube';
 class Video extends React.Component {
   render() {
     return (
-      <div id='videoContainer' >
-        <video  src={this.props.urls[this.props.index]}/>
-      </div>
+      <iframe height="42.19vh" src={this.props.videoURLS[this.props.index]}/>
     );
   }
 }
 
 module.exports = Video;
-// height="397px"

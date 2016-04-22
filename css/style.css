@@ -17,7 +17,7 @@ h1{
   /*border: 3px solid white;*/
   background-color: rgb(34, 12, 21)
 }
-#App {
+iframe {
   align-items: center;
   justify-content: center;
   /*border: 3px solid blue;*/
@@ -25,18 +25,12 @@ h1{
   height: 100%;
 }
 
-#videoContainer {
-  /*border: 2px solid red;*/
+/*iframe{
+  border: 2px solid yellow;
   width: 75vh;
   height: 42.19vh;
   margin: 2.5% auto;
-}
-
-video{
-  /*border: 2px solid yellow;*/
-  width: 75vh;
-  height: 42.19vh;
-}
+}*/
 
 #Back, #Next{
   display: inline-block;

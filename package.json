@@ -25,6 +25,7 @@
     "path": "^0.12.7",
     "react": "^0.14",
     "react-dom": "^0.14.0",
+    "react-youtube": "^6.1.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }

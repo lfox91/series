@@ -3,7 +3,7 @@ import {render}from 'react-dom';
 import Video from './Video';
 import Back from './Back';
 import Next from './Next';
-import {yt} from '../keys';
+import keys from '../keys';
 import $ from 'jquery';
 
 
@@ -19,6 +19,7 @@ class App extends React.Component {
   }
   getDate() {
     let date = new Date();
+    date.setDate(date.getDate() - 30);
     date = date.toISOString().split('');
     date.splice(19,4);
     date = date.join('');
@@ -27,9 +28,10 @@ class App extends React.Component {
   componentDidMount() {
     let now = this.getDate();
     $.get(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&chart=mostPopular
-      &videoCategoryId=1&publishedAfter=${now}&maxResults=50&relevanceLanguage=en&
-      videoSyndicated=true&q=webseries&type=video&key=${yt}`,
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&
+      videoCategoryId=1&publishedAfter=${now}&maxResults=50&relevanceLanguage=en&
+      eventType=completed&safeSearch=moderate&videoDefinition=high&q=episode1&
+      videoEmbeddable=true&videoSyndicated=true&type=video&key=${keys.yt}`,
       function ( data ) {
         let len = data.items.length;
         for ( var i=0; i<len; i++ ) {
@@ -55,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div id='App'>
-        <Video urls={this.state.videoURLS} />
+        <Video videoURLS={this.state.videoURLS} index={this.state.index}/>
         <Back index={this.state.index} decIndex={this.decIndex}/>
         <Next index={this.state.index} incIndex={this.incIndex}/>
 
