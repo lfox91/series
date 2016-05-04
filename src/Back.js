@@ -1,5 +1,6 @@
 import React from 'react';
 
+export default
 class Back extends React.Component {
   render() {
     return (
@@ -10,4 +11,4 @@ class Back extends React.Component {
   }
 }
 
-module.exports = Back;
+

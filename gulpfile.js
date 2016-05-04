@@ -11,7 +11,7 @@ function handleErrors() {
     title : 'Compile Error',
     message : '<%= error.message %>'
   }).apply(this, args);
-  //console.log('Compile error: ', args);
+  console.log('Compile error: ', args);
   this.emit('end'); //keeps gulp from hanging on this task
 }
 
@@ -52,5 +52,5 @@ gulp.task('scripts', function() {
 
 // run 'scripts' task first, then watch for future changes
 gulp.task('default', ['scripts'], function() {
-  return buildScript('app.js', true);
+  return buildScript('App.js', true);
 });
